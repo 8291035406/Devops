@@ -15,6 +15,7 @@ jobs:
         environment:
           - dev
           - qa
+          - preprod
           - prod
 
     steps:
