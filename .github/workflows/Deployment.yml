@@ -4,13 +4,21 @@ on:
   push:
       branches:
         - main
-        - dev
-        - qa
-        - preprod
-        - preprod2
 jobs:
-  hello-job:
+  Deployment:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        enviorment:
+          - dev
+          - qa
+          - preprod
+          - prepod2
+          - prod
+    steps:
+      - name: Deployment to diffrent envs
+        run: echo "Deploying to ${{matrix.enviorment}}"
 
     steps:
       - name: Tesing the hello word scriypt
