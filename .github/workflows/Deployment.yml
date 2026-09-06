@@ -20,6 +20,4 @@ jobs:
       - name: Deployment to diffrent envs
         run: echo "Deploying to ${{matrix.enviorment}}"
 
-    steps:
-      - name: Tesing the hello word scriypt
-        run: echo "welcomme to 1st job"
+   
