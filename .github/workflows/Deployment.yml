@@ -4,6 +4,10 @@ on:
   push:
       branches:
         - main
+        - dev
+        - qa
+        - preprod
+        - preprod2
 jobs:
   hello-job:
     runs-on: ubuntu-latest
