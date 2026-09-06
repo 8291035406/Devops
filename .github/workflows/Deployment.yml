@@ -1,23 +1,22 @@
-name: multiple deployment
+
+name: Deployment with multiple environments
 
 on:
   push:
-      branches:
-        - main
+    branches:
+      - main
+
 jobs:
   Deployment:
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        enviorment:
+        environment:
           - dev
           - qa
-          - preprod
-          - prepod2
           - prod
-    steps:
-      - name: Deployment to diffrent envs
-        run: echo "Deploying to ${{matrix.enviorment}}"
 
-   
+    steps:
+      - name: Deployment to different environment
+        run: echo "Deploying to ${{ matrix.environment }}"
