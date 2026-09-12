@@ -1,0 +1,32 @@
+name: Prod deploy using canary
+
+on: 
+  push:
+    branches:
+      - main
+
+jobs:
+  canary-10:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy 10% trafffic
+        run: |
+          echo "Deplloy new version to 10% traffic to prod"
+
+      - name: Monitor 10% deploy
+        run: |
+          echo " check app health, erorr & latency"
+
+  canary-50:
+    needs: canary-10
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Increase traffci to 50%
+        run: |
+          echo "Increasee new trafficj 50%"
+      - name: verify prod deploy
+        run: |
+          echo "prdocution deployment"
+    
