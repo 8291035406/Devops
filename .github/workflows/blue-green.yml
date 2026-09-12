@@ -1,7 +1,7 @@
 name: Deploy app using bule-green deployment
 
 on:
- push:
+ pull_request: 
    branches:
      - main
 jobs:
