@@ -1,7 +1,7 @@
 name: Artifacts upload pipline
 
 on: 
-  push:
+  pull_request: :
     branches:
       - main
     
