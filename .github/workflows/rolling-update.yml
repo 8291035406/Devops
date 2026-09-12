@@ -1,0 +1,30 @@
+name: Deplo using rolling update
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    strategy:
+      max-parallel: 2
+      matrix:
+        server:
+          - server1
+          - server2
+          - server3
+          - server4
+          - server5
+          - server6
+          - server7
+          - server8
+          - server9
+          - server10
+
+    steps:
+      - name: Deplyment o diff sever
+        run: |
+          echo "deploy app to ${{ matrix.server}}"
+  
