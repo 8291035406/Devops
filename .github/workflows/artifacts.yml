@@ -20,6 +20,19 @@ jobs:
       with:
         name: application-artifact
         path:  app.js
+
+  deployment:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download the artifacts
+        uses: actions/downlaod-artifact@v4
+        with:
+          name: application-artifact
+          
+      - name: Test the downlaod
+        run: cat app.js
         
 
     
