@@ -1,7 +1,7 @@
 name: Deplo using rolling update
 
 on:
-  push:
+  pull_request: 
     branches:
       - main
 jobs:
