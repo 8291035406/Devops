@@ -1,0 +1,37 @@
+name: Deploy app using bule-green deployment
+
+on:
+ push:
+   branches:
+     - main
+jobs:
+  deploy-blue:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name:  Deploy app to bule
+        run: |
+          echo " deploying app to blue env"
+          echo  "Blue server: server1"
+
+  deploy-green:
+    needs: deploy-blue
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: deploy app in green
+        run: |
+          echo "deploy app to green env"
+          echo "Green server: server2"
+
+      - name: test green env
+        run: |
+          echo "test green env"
+          echo "green env is healthy"
+      - name: Switch traffic to green
+        run: |
+          echo "switch from blue to green"
+          echo "end"
+    
+          
+          
